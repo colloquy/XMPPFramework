@@ -185,7 +185,7 @@
 - (void)getLastHandledByClient:(uint32_t *)lastHandledByClientPtr
            lastHandledByServer:(uint32_t *)lastHandledByServerPtr
         pendingOutgoingStanzas:(NSArray **)pendingOutgoingStanzasPtr
-                     forStream:(XMPPStream *)stream;
+                     forStream:(XMPPStream *)stream
 {
 	if (lastHandledByClientPtr)    *lastHandledByClientPtr    = lastHandledByClient;
 	if (lastHandledByServerPtr)    *lastHandledByServerPtr    = lastHandledByServer;

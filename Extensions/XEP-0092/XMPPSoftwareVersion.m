@@ -78,7 +78,7 @@
 	{
         XMPPIQ *resultIQ = [XMPPIQ iqWithType:@"result" to:[iq from] elementID:[iq elementID]];
         
-        NSXMLElement *query = [NSXMLElement elementWithName:@"query" xmlns:XMLNS_URN_XMPP_VERSION];
+        query = [NSXMLElement elementWithName:@"query" xmlns:XMLNS_URN_XMPP_VERSION];
         [resultIQ addChild:query];
         
         NSXMLElement *nameElement = [NSXMLElement elementWithName:@"name" stringValue:self.name];

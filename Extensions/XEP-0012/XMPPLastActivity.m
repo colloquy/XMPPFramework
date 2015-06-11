@@ -133,14 +133,14 @@ static const NSTimeInterval XMPPLastActivityDefaultTimeout = 30.0;
 	dispatch_async(moduleQueue, ^{
 		__weak __typeof__(self) self_weak_ = self;
 		[_queryTracker addID:queryID block:^(XMPPIQ *iq, id<XMPPTrackingInfo> info) {
-			__strong __typeof__(self) self = self_weak_;
+			__strong __typeof__(self) self_strong_ = self_weak_;
 			if (iq)
 			{
-				[self delegateDidReceiveResponse:iq];
+				[self_strong_ delegateDidReceiveResponse:iq];
 			}
 			else
 			{
-				[self delegateDidNotReceiveResponse:info.elementID dueToTimeout:info.timeout];
+				[self_strong_ delegateDidNotReceiveResponse:info.elementID dueToTimeout:info.timeout];
 			}
 		} timeout:timeout];
         

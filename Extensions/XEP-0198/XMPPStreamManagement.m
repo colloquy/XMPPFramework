@@ -1180,12 +1180,12 @@
 		{
 			// An incoming stanza got markedAsHandled post-disconnect
 			
-			NSArray *pending = [[NSArray alloc] initWithArray:unackedByServer copyItems:YES];
+			NSArray *pendingObjects = [[NSArray alloc] initWithArray:unackedByServer copyItems:YES];
 			
 			[storage setLastDisconnect:disconnectDate
 				   lastHandledByClient:lastHandledByClient
 				   lastHandledByServer:lastHandledByServer
-				pendingOutgoingStanzas:pending
+				pendingOutgoingStanzas:pendingObjects
 							 forStream:xmppStream];
 		}
 	}
@@ -1587,12 +1587,12 @@
 		{
 			// An incoming stanza got markedAsHandled post-disconnect
 			
-			NSArray *pending = [[NSArray alloc] initWithArray:unackedByServer copyItems:YES];
+			NSArray *pendingObjects = [[NSArray alloc] initWithArray:unackedByServer copyItems:YES];
 		
 			[storage setLastDisconnect:disconnectDate
 			       lastHandledByClient:lastHandledByClient
 			       lastHandledByServer:lastHandledByServer
-			    pendingOutgoingStanzas:pending
+			    pendingOutgoingStanzas:pendingObjects
 			                 forStream:xmppStream];
 		}
 	}

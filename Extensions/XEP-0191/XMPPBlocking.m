@@ -459,7 +459,7 @@ typedef enum XMPPBlockingQueryInfoType {
         }
         else
         {
-            XMPPBlockingQueryInfo *queryInfo = pendingQueries[[iq elementID]];
+            queryInfo = pendingQueries[[iq elementID]];
             
             id value = blockingDict[[queryInfo.blockingXMPPJID full]];
             if (value == nil)
@@ -481,7 +481,7 @@ typedef enum XMPPBlockingQueryInfoType {
         }
         else
         {
-            XMPPBlockingQueryInfo *queryInfo = pendingQueries[[iq elementID]];
+            queryInfo = pendingQueries[[iq elementID]];
             
             id value = blockingDict[[queryInfo.blockingXMPPJID full]];
             if (value == nil)

@@ -178,7 +178,7 @@
 #pragma mark XMPPStream Delegate
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (void)xmppStreamDidStartNegotiation:(XMPPStream *)sender;
+- (void)xmppStreamDidStartNegotiation:(XMPPStream *)sender
 {
 	[self startTimer];
 }

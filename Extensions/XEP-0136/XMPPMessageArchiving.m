@@ -248,9 +248,9 @@
 			
 			if (itemJid.resource)
 			{
-				BOOL match = [messageJid isEqualToJID:itemJid options:XMPPJIDCompareFull];
+				BOOL matched = [messageJid isEqualToJID:itemJid options:XMPPJIDCompareFull];
 				
-				if (match && (match_full == nil))
+				if (matched && (match_full == nil))
 				{
 					match_full = item;
 				}
@@ -258,14 +258,14 @@
 			else if (itemJid.user)
 			{
 				BOOL exactmatch = [item attributeBoolValueForName:@"exactmatch" withDefaultValue:NO];
-				BOOL match;
+				BOOL matched;
 				
 				if (exactmatch)
-					match = [messageJid isEqualToJID:itemJid options:XMPPJIDCompareFull];
+					matched = [messageJid isEqualToJID:itemJid options:XMPPJIDCompareFull];
 				else
-					match = [messageJid isEqualToJID:itemJid options:XMPPJIDCompareBare];
+					matched = [messageJid isEqualToJID:itemJid options:XMPPJIDCompareBare];
 				
-				if (match && (match_bare == nil))
+				if (matched && (match_bare == nil))
 				{
 					match_bare = item;
 				}
@@ -273,14 +273,14 @@
 			else
 			{
 				BOOL exactmatch = [item attributeBoolValueForName:@"exactmatch" withDefaultValue:NO];
-				BOOL match;
+				BOOL matched;
 				
 				if (exactmatch)
-					match = [messageJid isEqualToJID:itemJid options:XMPPJIDCompareFull];
+					matched = [messageJid isEqualToJID:itemJid options:XMPPJIDCompareFull];
 				else
-					match = [messageJid isEqualToJID:itemJid options:XMPPJIDCompareDomain];
+					matched = [messageJid isEqualToJID:itemJid options:XMPPJIDCompareDomain];
 				
-				if (match && (match_domain == nil))
+				if (matched && (match_domain == nil))
 				{
 					match_domain = item;
 				}

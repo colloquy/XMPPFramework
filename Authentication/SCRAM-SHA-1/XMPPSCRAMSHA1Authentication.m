@@ -243,7 +243,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
     NSData *result = [self HashWithAlgorithm:algorithm data:mutableSaltData key:passwordData];
     NSData *previous = [result copy];
     
-    for (int i = 1; i < rounds; i++) {
+    for (NSUInteger i = 1; i < rounds; i++) {
         previous = [self HashWithAlgorithm:algorithm data:previous key:passwordData];
         result = [self xorData:result withData:previous];
     }
@@ -269,9 +269,9 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
     char *keyData = (char *)data2.bytes;
     
     char *keyPtr = keyData;
-    int keyIndex = 0;
+    NSUInteger keyIndex = 0;
     
-    for (int x = 0; x < data1.length; x++) {
+    for (NSUInteger x = 0; x < data1.length; x++) {
         *dataPtr = *dataPtr ^ *keyPtr;
         dataPtr++;
         keyPtr++;

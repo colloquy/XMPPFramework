@@ -530,7 +530,7 @@ typedef enum XMPPPrivacyQueryInfoType {
 	}
 }
 
-NSInteger sortItems(id itemOne, id itemTwo, void *context)
+static NSInteger sortItems(id itemOne, id itemTwo, void *context)
 {
 	NSXMLElement *item1 = (NSXMLElement *)itemOne;
 	NSXMLElement *item2 = (NSXMLElement *)itemTwo;

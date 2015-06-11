@@ -24,8 +24,8 @@ NSString *const XMPPGoogleSharedStatusShowIdle = @"away";
 @interface XMPPGoogleSharedStatus () {
   
 	// Server specified maximum values.
-	NSInteger _statusListMaxCount;
-	NSInteger _statusMessageMaxLength;
+	NSUInteger _statusListMaxCount;
+	NSUInteger _statusMessageMaxLength;
 }
 
 @property (nonatomic, copy) NSString *previousShow;
@@ -143,9 +143,8 @@ NSString *const XMPPGoogleSharedStatusShowIdle = @"away";
 			[statusList removeObjectAtIndex:statusList.count-1];
 		
 		// Remove any blank statuses.
-		for(int i = 0; i < statusList.count; i++) {
-			NSString *status = statusList[i];
-			if([status isEqualToString:@""])
+		for(NSUInteger i = 0; i < statusList.count; i++) {
+			if([statusList[i] isEqualToString:@""])
 				[statusList removeObjectAtIndex:i];
 		}
 		

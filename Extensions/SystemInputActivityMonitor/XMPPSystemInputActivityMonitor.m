@@ -63,10 +63,10 @@ const NSTimeInterval XMPPSystemInputActivityMonitorInactivityTimeIntervalNone = 
         {
     		dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), (TIMER_TIME_INTERVAL * NSEC_PER_SEC), 0);
     		dispatch_source_set_event_handler(timer, ^{                
-                CFTimeInterval secondsSinceLastUserInteraction = CGEventSourceSecondsSinceLastEventType(kCGEventSourceStateHIDSystemState, kCGAnyInputEventType);
+                CFTimeInterval dsecondsSinceLastUserInteraction = CGEventSourceSecondsSinceLastEventType(kCGEventSourceStateHIDSystemState, kCGAnyInputEventType);
 
-				NSDate *date = [NSDate dateWithTimeIntervalSinceNow:(secondsSinceLastUserInteraction * -1)];
-				[self _setLastActivityDate:date];
+				NSDate *ddate = [NSDate dateWithTimeIntervalSinceNow:(dsecondsSinceLastUserInteraction * -1)];
+				[self _setLastActivityDate:ddate];
             });
     		dispatch_resume(timer);
         }
@@ -101,7 +101,7 @@ const NSTimeInterval XMPPSystemInputActivityMonitorInactivityTimeIntervalNone = 
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma Internal
+#pragma mark - Internal
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 - (void)_setLastActivityDate:(NSDate *)flag{
@@ -136,7 +136,7 @@ const NSTimeInterval XMPPSystemInputActivityMonitorInactivityTimeIntervalNone = 
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma Properties
+#pragma mark - Properties
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 - (BOOL)isActive
