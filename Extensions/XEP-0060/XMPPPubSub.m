@@ -57,9 +57,9 @@
     return result;
 }
 
-- (void)setPepPublisherJIDs:(NSArray<XMPPJID *> *)pepPublisherJIDs
+- (void)setPepPublisherJIDs:(NSArray<XMPPJID *> *)newPepPublisherJIDs
 {
-    NSArray<XMPPJID *> *newValue = [pepPublisherJIDs copy];
+    NSArray<XMPPJID *> *newValue = [newPepPublisherJIDs copy];
     
     dispatch_block_t block = ^{
         self->pepPublisherJIDs = newValue;
@@ -87,9 +87,9 @@
     return result;
 }
 
-- (void)setPepNodes:(NSArray<NSString *> *)pepNodes
+- (void)setPepNodes:(NSArray<NSString *> *)newPepNodes
 {
-    NSArray<NSString *> *newValue = [pepNodes copy];
+    NSArray<NSString *> *newValue = [newPepNodes copy];
     
     dispatch_block_t block = ^{
         self->pepNodes = newValue;
